@@ -110,8 +110,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.respond_json({"ok": False, "error": "Payload inválido."})
             return
 
+        # Use the Replit secret as fallback when no token is typed in the form.
         if not token:
-            self.respond_json({"ok": False, "error": "Token não informado."})
+            token = os.environ.get("GITHUB_PERSONAL_ACCESS_TOKEN", "").strip()
+
+        if not token:
+            self.respond_json({"ok": False, "error": "Token não informado e secret GITHUB_PERSONAL_ACCESS_TOKEN não configurada."})
             return
 
         ok, result = push_to_github(token, repo)
