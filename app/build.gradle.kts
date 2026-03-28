@@ -76,23 +76,25 @@ android {
         }
 
         // Localization support - specify which languages to include
-        resourceConfigurations += listOf(
-            "en",      // English (default)
-            "es",      // Spanish
-            "da",      // Danish
-            "pt-rBR",  // Portuguese (Brazilian)
-            "zh-rTW",  // Traditional Chinese
-            "zh-rCN",  // Simplified Chinese
-            "fr",      // French
-            "de",      // German
-            "uk",      // Ukrainian
-            "it",      // Italian
-            "ro",      // Română
-            "pl",      // Polish
-            "ru",      // Russian
-            "ko",      // Korean
-            // TODO: Add more languages here using the ISO 639-1 locale code with regional qualifiers (e.g., "pt-rPT" for European Portuguese)
-        )
+        androidResources {
+            localeFilters += listOf(
+                "en",      // English (default)
+                "es",      // Spanish
+                "da",      // Danish
+                "pt-rBR",  // Portuguese (Brazilian)
+                "zh-rTW",  // Traditional Chinese
+                "zh-rCN",  // Simplified Chinese
+                "fr",      // French
+                "de",      // German
+                "uk",      // Ukrainian
+                "it",      // Italian
+                "ro",      // Română
+                "pl",      // Polish
+                "ru",      // Russian
+                "ko",      // Korean
+                // TODO: Add more languages here using the ISO 639-1 locale code with regional qualifiers (e.g., "pt-rPT" for European Portuguese)
+            )
+        }
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
