@@ -4,7 +4,7 @@
 
 set -e
 
-REPO_URL="https://github.com/dtenorio921-pixel/Gamekt-pro.06.git"
+REPO_URL="https://github.com/dtenorio921-pixel/Gamekt-pro.07.git"
 BRANCH="main"
 
 if [ -z "$GITHUB_PERSONAL_ACCESS_TOKEN" ]; then
